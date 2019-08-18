@@ -1,35 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { CardStyle, NameStyle, CompanyStyle } from './style';
 
-const Card = styled.article`
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Roboto, Arial;
-  margin: 5px;
-  max-width: 300px;
-  padding: 20px 30px;
-  transition: background-color .3s ease;
-
-  &:hover {
-    background-color: #eee;
-  }
-`;
-
-const Name = styled.h3`
-  margin: 0;
-`;
-
-const Company = styled.p`
-  margin: 0;
-`;
-
-export default function CartItem() {
+export default function Card({ name, address, company }) {
   return (
-    <Card>
-      <Name>Gustavo Bento de Paula</Name>
-      <Company>Jussi - São Paulo</Company>
-    </Card>
+    <CardStyle>
+      <NameStyle>{name}</NameStyle>
+      <CompanyStyle>{company.name} - {address.city}</CompanyStyle>
+    </CardStyle>
   );
 }
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  address: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+  }).isRequired,
+  company: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+};

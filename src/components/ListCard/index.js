@@ -1,39 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { ListCardStyle } from './style';
 import Card from '../Card';
 
-const ListCard = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+export default function ListCard() {
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  const users = useSelector((state) => state.users);
 
-  @media (max-width: 425px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-
-export default function CartItem() {
   return (
-    <ListCard>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </ListCard>
+    <ListCardStyle>
+      {users.map((user) => (
+        <Card key={user.id} name={user.name} address={user.address} company={user.company} />
+      ))}
+    </ListCardStyle>
   );
 }
