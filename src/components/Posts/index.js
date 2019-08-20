@@ -8,8 +8,14 @@ export default function Posts() {
 
   return (
     <>
-      {posts.map((post, index) => (
-        <PostItem key={post.id} index={index} title={post.title} body={post.body} user={user} />
+      {posts.fetched && user.fetched && posts.data.map((post, index) => (
+        <PostItem
+          key={post.id}
+          index={index}
+          title={post.title}
+          body={post.body}
+          user={user}
+        />
       ))}
     </>
   );

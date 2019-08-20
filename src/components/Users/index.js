@@ -8,7 +8,7 @@ export default function Users() {
 
   return (
     <>
-      {users.map((user) => (
+      {users.data.map((user) => (
         <UserItem
           key={user.id}
           id={user.id}

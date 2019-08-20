@@ -10,20 +10,18 @@ export default function UserPosts(props) {
 
 
   function getPosts() {
-    dispatch({ type: 'FETCH_POSTS_START' });
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`).then((res) => res.json()).then((res) => {
-      dispatch({ type: 'RECEIVE_POSTS', payload: res });
-    }).catch((err) => {
-      dispatch({ type: 'FETCH_POSTS_ERROR', payload: err });
+    dispatch({
+      type: 'FETCH_POSTS',
+      meta: 'posts',
+      payload: fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`).then((res) => res.json()),
     });
   }
 
   function getUser() {
-    dispatch({ type: 'FETCH_USER_START' });
-    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then((res) => res.json()).then((res) => {
-      dispatch({ type: 'RECEIVE_USER', payload: res });
-    }).catch((err) => {
-      dispatch({ type: 'FETCH_USER_ERROR', payload: err });
+    dispatch({
+      type: 'FETCH_USER',
+      meta: 'user',
+      payload: fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then((res) => res.json()),
     });
   }
 

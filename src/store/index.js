@@ -1,48 +1,60 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import promise from 'redux-promise-middleware';
 
 const INITIAL_STATE = {
-  fetching: false,
-  fetched: false,
-  user: null,
-  users: [],
-  posts: [],
-  error: null,
+  user: {
+    fetching: false,
+    fetched: false,
+    error: null,
+    data: {},
+  },
+  users: {
+    fetching: false,
+    fetched: false,
+    error: null,
+    data: [],
+  },
+  posts: {
+    fetching: false,
+    fetched: false,
+    error: null,
+    data: [],
+  },
 };
 
 function users(state = INITIAL_STATE, action) {
+  const caseTarget = action.meta && action.meta.toUpperCase();
+
   switch (action.type) {
-    case 'FETCH_USERS_START':
-      return { ...state, fetching: true };
-    case 'FETCH_USERS_ERROR':
-      return { ...state, fetching: false, error: action.payload };
-    case 'RECEIVE_USERS':
+    case `FETCH_${caseTarget}_PENDING`:
+      return { ...state, [action.meta]: { ...state[action.meta], fetching: true } };
+    case `FETCH_${caseTarget}_REJECTED`:
       return {
-        ...state, fetching: false, fetched: true, users: action.payload,
+        ...state,
+        [action.meta]: {
+          ...state[action.meta],
+          fetching: false,
+          error: action.payload,
+        },
       };
-    case 'FETCH_USER_START':
-      return { ...state, fetching: true };
-    case 'FETCH_USER_ERROR':
-      return { ...state, fetching: false, error: action.payloaded };
-    case 'RECEIVE_USER':
+    case `FETCH_${caseTarget}_FULFILLED`:
       return {
-        ...state, fetching: false, fetched: true, user: action.payload,
-      };
-    case 'FETCH_POSTS_START':
-      return { ...state, fetching: true };
-    case 'FETCH_POSTS_ERROR':
-      return { ...state, fetching: false, error: action.payload };
-    case 'RECEIVE_POSTS':
-      return {
-        ...state, fetching: false, fetched: true, posts: action.payload,
+        ...state,
+        [action.meta]: {
+          ...state[action.meta],
+          fetching: false,
+          fetched: true,
+          data: action.payload,
+        },
       };
     default:
       return state;
   }
 }
 
-const middleware = applyMiddleware(thunk, logger);
+const middleware = applyMiddleware(promise, thunk, logger);
 const store = createStore(users, middleware);
 
 export default store;

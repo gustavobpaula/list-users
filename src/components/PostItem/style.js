@@ -36,7 +36,7 @@ export const BoxDescription = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   color: #333;
   font-size: 45px;
   margin: 0;
