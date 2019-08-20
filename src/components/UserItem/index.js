@@ -7,19 +7,17 @@ import {
   StyledLink,
 } from './style';
 
-export default function UserItem(
-  {
-    id,
-    name,
-    address,
-    company,
-  },
-) {
+export default function UserItem({
+  id,
+  name,
+  address,
+  company,
+}) {
   return (
     <Card>
       <StyledLink to={`/user/${id}`}>
         <Name>{name}</Name>
-        <Company>{company.name} - {address.city}</Company>
+        <Company>{company.name} | {address.city}</Company>
       </StyledLink>
     </Card>
   );

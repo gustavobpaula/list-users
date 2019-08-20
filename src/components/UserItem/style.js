@@ -11,6 +11,10 @@ export const Card = styled.article`
   padding: 20px 30px;
   transition: background-color .3s ease;
 
+  @media (max-width: 1200px) {
+    margin: 5px 5%;
+  }
+
   &:hover {
     background-color: #eee;
   }

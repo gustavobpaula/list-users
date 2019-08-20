@@ -7,6 +7,14 @@ export const Post = styled.article`
   grid-template-columns: 1fr 1fr;
   padding: 80px 0;
 
+  @media (max-width: 1200px) {
+    margin: 0 5%;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
   &:nth-child(even) {
     grid-auto-flow: dense
   }
@@ -40,6 +48,7 @@ export const Title = styled.h1`
 
 export const User = styled.p`
   color: #999;
+  margin-bottom: 50px;
 `;
 
 export const Description = styled.p`
