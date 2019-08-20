@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import UserItem from '../UserItem';
+import Loading from '../Loading';
 
 export default function Users() {
   const users = useSelector((state) => state.users);
@@ -8,7 +9,9 @@ export default function Users() {
 
   return (
     <>
-      {users.data.map((user) => (
+      {users.fetching ? (
+        <Loading />
+      ) : users.data.map((user) => (
         <UserItem
           key={user.id}
           id={user.id}
