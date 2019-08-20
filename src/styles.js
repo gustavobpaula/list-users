@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   body {
     background-color: #f5f5f5;
+    font-family: Roboto, Arial;
     margin: 0;
     padding: 0;
   }
