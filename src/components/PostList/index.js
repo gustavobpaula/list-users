@@ -8,6 +8,10 @@ export default function Posts() {
   const posts = useSelector((state) => state.posts);
   const user = useSelector((state) => state.user);
 
+  function renderNotFound() {
+    return ((posts.data && posts.data.length === 0) || posts.error) && <NotFound />;
+  }
+
   return (
     <>
       { (posts.fetching || user.fetching) ? (
@@ -22,7 +26,7 @@ export default function Posts() {
         />
       )) }
 
-      {((posts.data && posts.data.length === 0) || posts.error) && <NotFound />}
+      {renderNotFound()}
 
     </>
   );

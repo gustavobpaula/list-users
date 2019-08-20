@@ -7,6 +7,9 @@ import NotFound from '../NotFound';
 export default function Users() {
   const users = useSelector((state) => state.users);
 
+  function renderNotFound() {
+    return ((users.data && users.data.length === 0) || users.error) && <NotFound />;
+  }
 
   return (
     <>
@@ -22,7 +25,7 @@ export default function Users() {
         />
       ))}
 
-      {((users.data && users.data.length === 0) || users.error) && <NotFound />}
+      {renderNotFound()}
     </>
   );
 }
