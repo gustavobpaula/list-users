@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import ListUsers from './pages/ListUsers';
-import UserPosts from './pages/UserPosts';
+import Users from './pages/Users';
+import Posts from './pages/Posts';
 import store from './store';
 import { Container, GlobalStyle } from './styles';
 
@@ -13,8 +13,8 @@ function App() {
         <GlobalStyle />
         <Container>
           <Switch>
-            <Route exact path="/" component={ListUsers} />
-            <Route exact path="/user/:id" component={UserPosts} />
+            <Route exact path="/" component={Users} />
+            <Route exact path="/user/:id" component={Posts} />
           </Switch>
         </Container>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import Posts from '../../components/Posts';
+import PostList from '../../components/PostList';
 
 export default function UserPosts(props) {
   const { match } = props;
@@ -32,7 +32,7 @@ export default function UserPosts(props) {
   });
 
   return (
-    <Posts />
+    <PostList />
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ListCard } from './style';
-import Users from '../../components/Users';
+import UserList from '../../components/UserList';
 
 export default function ListUsers() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export default function ListUsers() {
 
   return (
     <ListCard>
-      <Users />
+      <UserList />
     </ListCard>
   );
 }
