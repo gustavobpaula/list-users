@@ -8,19 +8,19 @@ const INITIAL_STATE = {
     fetching: false,
     fetched: false,
     error: null,
-    data: {},
+    data: null,
   },
   users: {
     fetching: false,
     fetched: false,
     error: null,
-    data: [],
+    data: null,
   },
   posts: {
     fetching: false,
     fetched: false,
     error: null,
-    data: [],
+    data: null,
   },
 };
 

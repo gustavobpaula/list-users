@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import PostItem from '../PostItem';
 import Loading from '../Loading';
+import NotFound from '../NotFound';
 
 export default function Posts() {
   const posts = useSelector((state) => state.posts);
@@ -11,7 +12,7 @@ export default function Posts() {
     <>
       { (posts.fetching || user.fetching) ? (
         <Loading />
-      ) : posts.fetched && user.fetched && posts.data.map((post, index) => (
+      ) : posts.data && posts.data.map((post, index) => (
         <PostItem
           key={post.id}
           index={index}
@@ -19,7 +20,10 @@ export default function Posts() {
           body={post.body}
           user={user}
         />
-      ))}
+      )) }
+
+      {((posts.data && posts.data.length === 0) || posts.error) && <NotFound />}
+
     </>
   );
 }

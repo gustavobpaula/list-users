@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import UserItem from '../UserItem';
 import Loading from '../Loading';
+import NotFound from '../NotFound';
 
 export default function Users() {
   const users = useSelector((state) => state.users);
@@ -11,7 +12,7 @@ export default function Users() {
     <>
       {users.fetching ? (
         <Loading />
-      ) : users.data.map((user) => (
+      ) : users.data && users.data.map((user) => (
         <UserItem
           key={user.id}
           id={user.id}
@@ -20,6 +21,8 @@ export default function Users() {
           company={user.company}
         />
       ))}
+
+      {((users.data && users.data.length === 0) || users.error) && <NotFound />}
     </>
   );
 }

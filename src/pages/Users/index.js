@@ -19,12 +19,12 @@ export default function ListUsers() {
     dispatch({
       type: 'FETCH_POSTS_FULFILLED',
       meta: 'posts',
-      payload: [],
+      payload: null,
     });
   }
 
   useEffect(() => {
-    if (users.data.length === 0) fetchUsers();
+    if (!users.data && !users.error) fetchUsers();
     cleanStorePosts();
   });
 
