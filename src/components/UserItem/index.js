@@ -14,12 +14,12 @@ export default function UserItem({
   company,
 }) {
   return (
-    <Card>
-      <StyledLink to={`/user/${id}`}>
+    <StyledLink to={`/user/${id}`}>
+      <Card>
         <Name>{name}</Name>
         <Company>{company.name} | {address.city}</Company>
-      </StyledLink>
-    </Card>
+      </Card>
+    </StyledLink>
   );
 }
 
