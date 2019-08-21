@@ -10,7 +10,7 @@ describe('Testing Posts Page Component', () => {
     const wrapper = shallow(
       <Provider store={store}>
         <Posts match={
-          { params: { id: 1 } }
+          { params: { id: '1' } }
         }
         />,
       </Provider>,

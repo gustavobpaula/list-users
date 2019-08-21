@@ -37,7 +37,7 @@ exports[`Testing Posts Page Component should render correctly 1`] = `
     match={
       Object {
         "params": Object {
-          "id": 1,
+          "id": "1",
         },
       }
     }
