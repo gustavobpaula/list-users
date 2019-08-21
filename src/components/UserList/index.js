@@ -7,6 +7,11 @@ import NotFound from '../NotFound';
 export default function Users() {
   const users = useSelector((state) => state.users);
 
+  /**
+   * Render Not Found component if users are null or empty
+   *
+   * @returns
+   */
   function renderNotFound() {
     return ((users.data && users.data.length === 0) || users.error) && <NotFound />;
   }

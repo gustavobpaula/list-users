@@ -8,6 +8,11 @@ export default function PostList() {
   const posts = useSelector((state) => state.posts);
   const user = useSelector((state) => state.user);
 
+  /**
+   * Render Not Found component if post are null or empty
+   *
+   * @returns
+   */
   function renderNotFound() {
     return ((posts.data && posts.data.length === 0) || posts.error) && <NotFound />;
   }

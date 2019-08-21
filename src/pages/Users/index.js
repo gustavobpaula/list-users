@@ -7,6 +7,10 @@ export default function Users() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
+  /**
+   * Get Users from jsonplaceholder API
+   *
+   */
   function fetchUsers() {
     dispatch({
       type: 'FETCH_USERS',
@@ -15,6 +19,10 @@ export default function Users() {
     });
   }
 
+  /**
+   * Clean posts in store
+   *
+   */
   function cleanStorePosts() {
     dispatch({
       type: 'FETCH_POSTS_FULFILLED',

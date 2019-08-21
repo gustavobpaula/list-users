@@ -8,7 +8,10 @@ export default function Posts(props) {
   const userId = match.params.id;
   const dispatch = useDispatch();
 
-
+  /**
+   * Get Posts from jsonplaceholder API
+   *
+   */
   function getPosts() {
     dispatch({
       type: 'FETCH_POSTS',
@@ -17,6 +20,10 @@ export default function Posts(props) {
     });
   }
 
+  /**
+   * Get User from jsonplaceholder API
+   *
+   */
   function getUser() {
     dispatch({
       type: 'FETCH_USER',
