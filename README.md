@@ -1,6 +1,6 @@
 # List of users and posts
 
-## stack used
+## Stack used
 
 - **React.js:** library of single page interface development tools
 - **Redux / Hooks:** Component state management
@@ -9,6 +9,12 @@
 - **Eslint:** Javascript linter
 - **Stylelint:** Style linter
 - **React Router:** Declarative Routing for React.js
+
+## Hosted project
+
+https://react-list-users.netlify.com
+
+---
 
 ## Install dependences
 
