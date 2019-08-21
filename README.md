@@ -9,6 +9,7 @@
 - **Eslint:** Javascript linter
 - **Stylelint:** Style linter
 - **React Router:** Declarative Routing for React.js
+- **jsonplaceholder:** User and Posts API (https://jsonplaceholder.typicode.com)
 
 ## Hosted project
 
