@@ -4,7 +4,7 @@ import PostItem from '../PostItem';
 import Loading from '../Loading';
 import NotFound from '../NotFound';
 
-export default function Posts() {
+export default function PostList() {
   const posts = useSelector((state) => state.posts);
   const user = useSelector((state) => state.user);
 

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import PostList from '../../components/PostList';
 
-export default function UserPosts(props) {
+export default function Posts(props) {
   const { match } = props;
   const userId = match.params.id;
   const dispatch = useDispatch();
@@ -36,10 +36,10 @@ export default function UserPosts(props) {
   );
 }
 
-UserPosts.propTypes = {
+Posts.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
 };

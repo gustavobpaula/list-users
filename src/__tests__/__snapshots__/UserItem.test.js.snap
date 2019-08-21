@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing UserItem Component should render correctly 1`] = `
+<styled.article>
+  <Styled(Link)
+    to="/user/1"
+  >
+    <styled.h3>
+      Lorem Ipsum
+    </styled.h3>
+    <styled.p>
+      Lorem Ipsum
+       | 
+      Lorem Ipsum
+    </styled.p>
+  </Styled(Link)>
+</styled.article>
+`;

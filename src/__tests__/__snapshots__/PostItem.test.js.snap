@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing PostItem Component should render correctly 1`] = `
+<styled.article>
+  <styled.div
+    className=""
+  >
+    <styled.h2>
+      Lorem Ipsum
+    </styled.h2>
+    <styled.p>
+      Lorem Ipsum
+       | 
+      Lorem Ipsum
+    </styled.p>
+  </styled.div>
+  <styled.div
+    className=""
+  >
+    <styled.p>
+      Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Suspendisse lacus dui, varius vitae ligula quis, suscipit dapibus neque.
+          Curabitur aliquam orci lacus, nec ultricies dui rhoncus nec. Ut in orci sit amet libero tincidunt euismod.
+          Vivamus sodales ut neque eu dapibus. Nulla metus justo, molestie nec tellus sed, sollicitudin rhoncus.
+    </styled.p>
+  </styled.div>
+</styled.article>
+`;

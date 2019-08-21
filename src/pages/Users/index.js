@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ListCard } from './style';
 import UserList from '../../components/UserList';
 
-export default function ListUsers() {
+export default function Users() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
