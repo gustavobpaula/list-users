@@ -46,6 +46,7 @@ function users(state = INITIAL_STATE, action) {
           ...state[action.meta],
           fetching: false,
           fetched: true,
+          error: null,
           data: action.payload,
         },
       };
